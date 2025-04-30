@@ -3,164 +3,1330 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Krishna | RISC-V Simulation Engineer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <title>Krishna Pavan Kalyan Inturi | RISC-V Simulation Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
+      margin: 0;
       background-color: #f9fbfd;
-      color: #1e293b;
+      color: #1f2933;
     }
     header {
-      background-color: #0f172a;
-      color: #e0f2fe;
+      background-color: #485566;
+      color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 2rem 1rem;
     }
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
     }
     header p {
-      margin-top: 0.3rem;
-      font-size: 1.2rem;
-      color: #7dd3fc;
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
     }
     section {
-      max-width: 960px;
+      max-width: 1000px;
       margin: auto;
-      padding: 2.5rem 1rem;
+      padding: 2rem 1rem;
     }
     .card {
-      background: white;
-      padding: 1.8rem;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 2rem;
       margin-bottom: 2rem;
-      border-left: 6px solid #2563eb;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-      border-radius: 8px;
     }
     .card h2 {
-      color: #1d4ed8;
+      color: #1a73e8;
+      margin-bottom: 1rem;
     }
-    .tech-badge {
-      background-color: #dbeafe;
-      color: #1e40af;
-      padding: 0.3rem 0.8rem;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      margin: 0.2rem;
+    .badge {
+      background-color: #485566;
+      color: white;
+      padding: 0.3rem 0.9rem;
+      margin: 0.3rem;
+      padding: 23px;
+      border-radius: 5px;
       display: inline-block;
-    }
-    pre {
-      background: #0f172a;
-      color: #e0f2fe;
-      padding: 1rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      font-family: 'Fira Code', monospace;
-    }
-    .code-title {
-      background-color: #1e293b;
-      color: #7dd3fc;
-      padding: 0.5rem;
       font-size: 0.9rem;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    details {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 0.5rem;
+      display: block;
+      margin-top: 0.5rem;
+      white-space: pre-wrap;
+      font-family: 'Courier New', monospace;
+      border-left: 3px solid #1a73e8;
     }
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #1e293b;
-      color: #a5b4fc;
+      padding: 1.5rem;
+      background: #f0f0f5;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Krishna</h1>
-    <p>Simulation Engineer | RISC-V ISA & RTL Co-Simulation</p>
+    <p>Simulation Engineer | A RISC-V Multithreaded Core Targeting the Skywater 0.13μm ASIC Library</p>
   </header>
 
   <section>
     <div class="card">
-      <h2>📌 About Me</h2>
-      <p>I’m a simulation engineer specialized in verifying RISC-V RTL cores using co-simulation with Spike. My work ensures that the behavior of the hardware aligns with the official instruction set semantics, contributing to functional correctness before ASIC tapeout.</p>
+      <h2>About Me</h2>
+      <p>I am a simulation engineer working on functional instruction validation of the A RISC-V Multithreaded Core Instruction Set. My role involves writing assembly and C-based instruction tests, executing them on the RTL model, comparing register dumps, and validating with spike/QEMU outputs. My recent work focused on validating memory, shift, and branch instructions using C.</p>
     </div>
 
     <div class="card">
-      <h2>📋 Summary of Work</h2>
+      <h2>Project Goals</h2>
+        <p>Develop a multithreaded RISC-V core. </p>
+        <p>Achieve timing and functional correctness. </p>
+        <p>Ensure co-simulation matches Spike's behavior. </p>
+        <p>Prepare core for ASIC tape-out readiness. </p>
+    </div>
+
+    <div class="card">
+        <h2>Development Cycle</h2>
+        <img src="dev_cycle.png" alt="Dev Cycle Flow Diagram"/>
+    </div>
+
+    <div class="card">
+        <h2>My Role: Simulation Engineer</h2>
+        <p>Set up Spike-RTL co-simulation on Windows. </p>
+        <p>Enable bidirectional communication via named pipes. </p>
+        <p>Modify simulation environment to transmit execution results. </p>
+        <p>Validate output consistency between Spike and RTL. </p>
+    </div>
+
+    <div class="card">
+        <h2>Architecture Flow</h2>
+        <img src="arch_flow.png" alt="Arch Flow Diagram"/>
+    </div>
+
+    <div class="card">
+      <h2>Tools & Technologies</h2>
+      <span class="badge">RISC-V Assembly</span>
+      <span class="badge">QEMU</span>
+      <span class="badge">GCC (riscv64-unknown-elf-gcc)</span>
+      <span class="badge">C</span>
+      <span class="badge">Register Dump Analyzer</span>
+      <span class="badge">Makefile & Scripts</span>
+    </div>
+
+    <div class="card">
+      <h2>Highlights from Recent Sprint</h2>
       <ul>
-        <li>✔️ Migrated simulation to Ubuntu for compatibility</li>
-        <li>✔️ Implemented 22+ RISC-V instructions including logical, shift, branch, and memory</li>
-        <li>✔️ Refined simulation framework and register dumps</li>
-        <li>✔️ Created automatic comparison utilities between Spike and RTL trace</li>
+        <li>Successfully compiled and executed instruction tests: <strong>ANDI, SUB, SLL, SLTU, SW ...</strong></li>
+        <li>Validated correctness by comparing memory/register states before and after execution</li>
+        <li>Captured consistent output between RTL and golden model traces</li>
+        <li>Debugged failure in SRAI and resolved by fixing shift behavior in simulator</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>🛠️ Technologies</h2>
-      <div class="tech-badge">RISC-V ISA</div>
-      <div class="tech-badge">Spike</div>
-      <div class="tech-badge">C</div>
-      <div class="tech-badge">GCC for RISC-V</div>
-      <div class="tech-badge">QEMU</div>
-      <div class="tech-badge">Verilator</div>
-      <div class="tech-badge">Register Dump Scripts</div>
-    </div>
+      <h2>Code Snippets</h2>
+      <p>Below are example code files I implemented for simulation validation of several instructions.</p>
+      <details>
+        <summary>test_andi.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-    <div class="card">
-      <h2>🔁 Simulation Flow</h2>
-      <p>Instruction ➜ Assembly Code ➜ Compile ➜ Run on RTL & Spike ➜ Dump ➜ Compare</p>
-      <img src="simulation_flow_diagram.png" alt="Simulation Flow Diagram" style="width:100%; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);"/>
-    </div>
+#define OUTPUT_FILE "andi_dump.txt"
 
-    <div class="card">
-      <h2>📦 Simulation Code Snippets</h2>
-      <div class="code-title">test_sltu.c</div>
-      <pre>
-int main() {
-    unsigned int a = 5, b = 10, res;
-    asm volatile ("sltu %0, %1, %2" : "=r"(res) : "r"(a), "r"(b));
-    return res;  // res should be 1
+// Structure to hold register values
+typedef struct {
+    uint64_t t0;
+    uint64_t result;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, t0\n"
+        "mv %1, a0\n"
+        : "=r"(regs->t0), "=r"(regs->result)
+    );
 }
-      </pre>
 
-      <div class="code-title">test_srai.c</div>
-      <pre>
-int main() {
-    int val = -32, result;
-    asm volatile ("srai %0, %1, 2" : "=r"(result) : "r"(val));
-    return result;  // Arithmetic right shift
+// Function to save register dump to a file
+void save_register_dump(const RegisterState *state) {
+    int fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    char buffer[128];
+    int len = snprintf(buffer, sizeof(buffer),
+        "Register Dump:\n"
+        "t0 = 0x%lx\n"
+        "result = 0x%lx\n",
+        state->t0, state->result
+    );
+
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    }
+
+    close(fd);
 }
-      </pre>
 
-      <div class="code-title">test_sw.c</div>
-      <pre>
+// Function to perform `andi`
+void bitwise_and_immediate() {
+    __asm__ volatile (
+        "li t0, 0b10101010\n"  // Load binary 10101010 into t0
+        "andi a0, t0, 0b11001100\n"  // Perform bitwise AND with 11001100
+        "ret\n"                // Return from function
+    );
+}
+
 int main() {
-    int value = 42;
-    int *addr = (int*)0x10000000;
-    asm volatile("sw %0, 0(%1)" : : "r"(value), "r"(addr));
+    RegisterState state;
+
+    // Call the function that executes `andi`
+    __asm__ volatile (
+        "call bitwise_and_immediate\n"
+    );
+
+    // Capture register state after calling `andi`
+    get_registers(&state);
+    save_register_dump(&state);
+
     return 0;
 }
-      </pre>
-    </div>
+        </code>
+      </details>
 
-    <div class="card">
-      <h2>📂 More Instruction Tests You Can Add</h2>
-      <ul>
-        <li>test_sb.c – Store Byte</li>
-        <li>test_sh.c – Store Halfword</li>
-        <li>test_sll.c – Shift Left Logical</li>
-        <li>test_sub.c – Subtract</li>
-        <li>test_xnor.c – Bitwise XNOR</li>
-      </ul>
-      <p><em>You can paste these test files directly into the simulation folder for validation.</em></p>
+      <details>
+        <summary>test_auipc.c</summary>
+        <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+#define MAX_DUMPS 100  // Maximum number of state dumps
+
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2;
+    unsigned long s0, s1;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+    unsigned long s2, s3, s4, s5, s6, s7, s8;
+    unsigned long s9, s10, s11;
+    unsigned long t3, t4, t5, t6;
+} RegisterState;
+
+typedef struct {
+    RegisterState states[MAX_DUMPS];
+    int count;
+} RegisterDump;
+
+// Function to save register dumps to a text file
+void save_register_dump(const RegisterDump *dump, const char *filename) {
+    FILE *file = fopen(filename, "w");
+    if (!file) {
+        perror("Failed to open file");
+        return;
+    }
+
+    for (int i = 0; i < dump->count; i++) {
+        RegisterState state = dump->states[i];
+        fprintf(file, "Dump %d:\n", i + 1);
+        fprintf(file, "ra=%lu sp=%lu gp=%lu tp=%lu\n", state.ra, state.sp, state.gp, state.tp);
+        fprintf(file, "t0=%lu t1=%lu t2=%lu s0=%lu s1=%lu\n", state.t0, state.t1, state.t2, state.s0, state.s1);
+        fprintf(file, "a0=%lu a1=%lu a2=%lu a3=%lu a4=%lu a5=%lu a6=%lu a7=%lu\n",
+                state.a0, state.a1, state.a2, state.a3, state.a4, state.a5, state.a6, state.a7);
+        fprintf(file, "s2=%lu s3=%lu s4=%lu s5=%lu s6=%lu s7=%lu s8=%lu s9=%lu s10=%lu s11=%lu\n",
+                state.s2, state.s3, state.s4, state.s5, state.s6, state.s7, state.s8, state.s9, state.s10, state.s11);
+        fprintf(file, "t3=%lu t4=%lu t5=%lu t6=%lu\n\n", state.t3, state.t4, state.t5, state.t6);
+    }
+
+    fclose(file);
+}
+
+// Function to fetch register values using RISC-V inline assembly
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, ra\n"
+        "mv %1, sp\n"
+        "mv %2, gp\n"
+        "mv %3, tp\n"
+        "mv %4, t0\n"
+        "mv %5, t1\n"
+        "mv %6, t2\n"
+        "mv %7, s0\n"
+        "mv %8, s1\n"
+        "mv %9, a0\n"
+        "mv %10, a1\n"
+        "mv %11, a2\n"
+        "mv %12, a3\n"
+        "mv %13, a4\n"
+        "mv %14, a5\n"
+        "mv %15, a6\n"
+        : "=r"(regs->ra), "=r"(regs->sp), "=r"(regs->gp), "=r"(regs->tp),
+            "=r"(regs->t0), "=r"(regs->t1), "=r"(regs->t2), "=r"(regs->s0),
+            "=r"(regs->s1), "=r"(regs->a0), "=r"(regs->a1), "=r"(regs->a2),
+            "=r"(regs->a3), "=r"(regs->a4), "=r"(regs->a5), "=r"(regs->a6)
+    );
+
+    __asm__ volatile (
+        "mv %0, a7\n"
+        "mv %1, s2\n"
+        "mv %2, s3\n"
+        "mv %3, s4\n"
+        "mv %4, s5\n"
+        "mv %5, s6\n"
+        "mv %6, s7\n"
+        "mv %7, s8\n"
+        "mv %8, s9\n"
+        "mv %9, s10\n"
+        "mv %10, s11\n"
+        "mv %11, t3\n"
+        "mv %12, t4\n"
+        "mv %13, t5\n"
+        "mv %14, t6\n"
+        : "=r"(regs->a7), "=r"(regs->s2), "=r"(regs->s3), "=r"(regs->s4),
+            "=r"(regs->s5), "=r"(regs->s6), "=r"(regs->s7), "=r"(regs->s8),
+            "=r"(regs->s9), "=r"(regs->s10), "=r"(regs->s11), "=r"(regs->t3),
+            "=r"(regs->t4), "=r"(regs->t5), "=r"(regs->t6)
+    );
+
+    printf("Register state:\n");
+    printf("  a0 = 0x%lx, a1 = 0x%lx, a2 = 0x%lx, a3 = 0x%lx\n", regs->a0, regs->a1, regs->a2, regs->a3);
+    printf("  a4 = 0x%lx, a5 = 0x%lx, a6 = 0x%lx, a7 = 0x%lx\n", regs->a4, regs->a5, regs->a6, regs->a7);
+    printf("  t0 = 0x%lx, t1 = 0x%lx, t2 = 0x%lx\n", regs->t0, regs->t1, regs->t2);
+    printf("---------------------------------------\n");
+}
+
+int main() {
+    RegisterDump regs;
+    regs.count = 0;
+
+    RegisterState state;
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    /* AUIPC Instruction */
+    __asm__ volatile (
+        "auipc t1, 0x12345\n"  // AUIPC loads 0x12345 << 12 and adds PC
+    );
+
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    save_register_dump(&regs, "../test_compare/test_auipc_dump.txt");
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_bgeu.c</summary>
+        <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+#define MAX_DUMPS 100  // Maximum number of state dumps
+
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2;
+    unsigned long s0, s1;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+    unsigned long s2, s3, s4, s5, s6, s7, s8;
+    unsigned long s9, s10, s11;
+    unsigned long t3, t4, t5, t6;
+} RegisterState;
+
+typedef struct {
+    RegisterState states[MAX_DUMPS];
+    int count;
+} RegisterDump;
+
+// Function to save register dumps to a text file
+void save_register_dump(const RegisterDump *dump, const char *filename) {
+    FILE *file = fopen(filename, "w");
+    if (!file) {
+        perror("Failed to open file");
+        return;
+    }
+
+    for (int i = 0; i < dump->count; i++) {
+        RegisterState state = dump->states[i];
+        fprintf(file, "Dump %d:\n", i + 1);
+        fprintf(file, "ra=%lu sp=%lu gp=%lu tp=%lu\n", state.ra, state.sp, state.gp, state.tp);
+        fprintf(file, "t0=%lu t1=%lu t2=%lu s0=%lu s1=%lu\n", state.t0, state.t1, state.t2, state.s0, state.s1);
+        fprintf(file, "a0=%lu a1=%lu a2=%lu a3=%lu a4=%lu a5=%lu a6=%lu a7=%lu\n",
+                state.a0, state.a1, state.a2, state.a3, state.a4, state.a5, state.a6, state.a7);
+        fprintf(file, "s2=%lu s3=%lu s4=%lu s5=%lu s6=%lu s7=%lu s8=%lu s9=%lu s10=%lu s11=%lu\n",
+                state.s2, state.s3, state.s4, state.s5, state.s6, state.s7, state.s8, state.s9, state.s10, state.s11);
+        fprintf(file, "t3=%lu t4=%lu t5=%lu t6=%lu\n\n", state.t3, state.t4, state.t5, state.t6);
+    }
+
+    fclose(file);
+}
+
+int main() {
+    RegisterDump regs;
+    regs.count = 0;
+
+    // Initialize RegisterState with default values
+    RegisterState state = {0};
+
+    // Set registers based on the image content
+    // Assuming rs1 = t1, rs2 = t2
+    state.t1 = 0x51;  // rs1 = 0x51 (81 in decimal)
+    state.t2 = 0x50;  // rs2 = 0x50 (80 in decimal)
+
+    printf("Initial register state:\n");
+    printf("  t1 (rs1) = 0x%lx, t2 (rs2) = 0x%lx\n", state.t1, state.t2);
+
+    // Implement BGEU logic
+    if (state.t1 >= state.t2) {  // Unsigned comparison
+        printf("Branch taken: t1 (0x%lx) >= t2 (0x%lx)\n", state.t1, state.t2);
+        // Perform branch operation (e.g., jump to a label)
+    } else {
+        printf("Branch not taken: t1 (0x%lx) < t2 (0x%lx)\n", state.t1, state.t2);
+    }
+
+    // Save the register dump after BGEU logic
+    regs.states[regs.count++] = state;
+    save_register_dump(&regs, "../test_compare/test_bgeu_dump.txt");
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_jal.c</summary>
+        <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+#define MAX_DUMPS 100  // Maximum number of state dumps
+
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2;
+    unsigned long s0, s1;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+    unsigned long s2, s3, s4, s5, s6, s7, s8;
+    unsigned long s9, s10, s11;
+    unsigned long t3, t4, t5, t6;
+} RegisterState;
+
+typedef struct {
+    RegisterState states[MAX_DUMPS];
+    int count;
+} RegisterDump;
+
+// Function to save register dumps to a text file
+void save_register_dump(const RegisterDump *dump, const char *filename) {
+    FILE *file = fopen(filename, "w");
+    if (!file) {
+        perror("Failed to open file");
+        return;
+    }
+
+    for (int i = 0; i < dump->count; i++) {
+        RegisterState state = dump->states[i];
+        fprintf(file, "Dump %d:\n", i + 1);
+        fprintf(file, "ra=%lu sp=%lu gp=%lu tp=%lu\n", state.ra, state.sp, state.gp, state.tp);
+        fprintf(file, "t0=%lu t1=%lu t2=%lu s0=%lu s1=%lu\n", state.t0, state.t1, state.t2, state.s0, state.s1);
+        fprintf(file, "a0=%lu a1=%lu a2=%lu a3=%lu a4=%lu a5=%lu a6=%lu a7=%lu\n",
+                state.a0, state.a1, state.a2, state.a3, state.a4, state.a5, state.a6, state.a7);
+        fprintf(file, "s2=%lu s3=%lu s4=%lu s5=%lu s6=%lu s7=%lu s8=%lu s9=%lu s10=%lu s11=%lu\n",
+                state.s2, state.s3, state.s4, state.s5, state.s6, state.s7, state.s8, state.s9, state.s10, state.s11);
+        fprintf(file, "t3=%lu t4=%lu t5=%lu t6=%lu\n\n", state.t3, state.t4, state.t5, state.t6);
+    }
+
+    fclose(file);
+}
+
+// Function to load register dumps from a text file
+void load_register_dump(RegisterDump *dump, const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        perror("Failed to open file");
+        return;
+    }
+
+    dump->count = 0;
+    while (dump->count < MAX_DUMPS &&
+            fscanf(file, "Dump %*d:\n"
+                        "ra=%lu sp=%lu gp=%lu tp=%lu\n"
+                        "t0=%lu t1=%lu t2=%lu s0=%lu s1=%lu\n"
+                        "a0=%lu a1=%lu a2=%lu a3=%lu a4=%lu a5=%lu a6=%lu a7=%lu\n"
+                        "s2=%lu s3=%lu s4=%lu s5=%lu s6=%lu s7=%lu s8=%lu s9=%lu s10=%lu s11=%lu\n"
+                        "t3=%lu t4=%lu t5=%lu t6=%lu\n\n",
+                    &dump->states[dump->count].ra, &dump->states[dump->count].sp,
+                    &dump->states[dump->count].gp, &dump->states[dump->count].tp,
+                    &dump->states[dump->count].t0, &dump->states[dump->count].t1,
+                    &dump->states[dump->count].t2, &dump->states[dump->count].s0,
+                    &dump->states[dump->count].s1, &dump->states[dump->count].a0,
+                    &dump->states[dump->count].a1, &dump->states[dump->count].a2,
+                    &dump->states[dump->count].a3, &dump->states[dump->count].a4,
+                    &dump->states[dump->count].a5, &dump->states[dump->count].a6,
+                    &dump->states[dump->count].a7, &dump->states[dump->count].s2,
+                    &dump->states[dump->count].s3, &dump->states[dump->count].s4,
+                    &dump->states[dump->count].s5, &dump->states[dump->count].s6,
+                    &dump->states[dump->count].s7, &dump->states[dump->count].s8,
+                    &dump->states[dump->count].s9, &dump->states[dump->count].s10,
+                    &dump->states[dump->count].s11, &dump->states[dump->count].t3,
+                    &dump->states[dump->count].t4, &dump->states[dump->count].t5,
+                    &dump->states[dump->count].t6) == 32) {
+        dump->count++;
+    }
+
+    fclose(file);
+}
+
+// Function to fetch register values using RISC-V inline assembly
+void get_registers(RegisterState *regs) {
+    /* Max of 30 input operands in a single asm statement */
+    /* First block: capture 16 registers */
+    __asm__ volatile (
+        "mv %0, ra\n"
+        "mv %1, sp\n"
+        "mv %2, gp\n"
+        "mv %3, tp\n"
+        "mv %4, t0\n"
+        "mv %5, t1\n"
+        "mv %6, t2\n"
+        "mv %7, s0\n"
+        "mv %8, s1\n"
+        "mv %9, a0\n"
+        "mv %10, a1\n"
+        "mv %11, a2\n"
+        "mv %12, a3\n"
+        "mv %13, a4\n"
+        "mv %14, a5\n"
+        "mv %15, a6\n"
+        : "=r"(regs->ra), "=r"(regs->sp), "=r"(regs->gp), "=r"(regs->tp),
+            "=r"(regs->t0), "=r"(regs->t1), "=r"(regs->t2), "=r"(regs->s0),
+            "=r"(regs->s1), "=r"(regs->a0), "=r"(regs->a1), "=r"(regs->a2),
+            "=r"(regs->a3), "=r"(regs->a4), "=r"(regs->a5), "=r"(regs->a6)
+    );
+
+    /* Second block: capture remaining 15 registers */
+    __asm__ volatile (
+        "mv %0, a7\n"
+        "mv %1, s2\n"
+        "mv %2, s3\n"
+        "mv %3, s4\n"
+        "mv %4, s5\n"
+        "mv %5, s6\n"
+        "mv %6, s7\n"
+        "mv %7, s8\n"
+        "mv %8, s9\n"
+        "mv %9, s10\n"
+        "mv %10, s11\n"
+        "mv %11, t3\n"
+        "mv %12, t4\n"
+        "mv %13, t5\n"
+        "mv %14, t6\n"
+        : "=r"(regs->a7), "=r"(regs->s2), "=r"(regs->s3), "=r"(regs->s4), "=r"(regs->s5),
+            "=r"(regs->s6), "=r"(regs->s7), "=r"(regs->s8), "=r"(regs->s9), "=r"(regs->s10),
+            "=r"(regs->s11), "=r"(regs->t3), "=r"(regs->t4), "=r"(regs->t5), "=r"(regs->t6)
+    );
+
+    printf("Register state:\n");
+    printf("  ra = 0x%lx, sp = 0x%lx, gp = 0x%lx, tp = 0x%lx\n", regs->ra, regs->sp, regs->gp, regs->tp);
+    printf("  t0 = 0x%lx, t1 = 0x%lx, t2 = 0x%lx\n", regs->t0, regs->t1, regs->t2);
+    printf("  s0 = 0x%lx, s1 = 0x%lx\n", regs->s0, regs->s1);
+    printf("  a0 = 0x%lx, a1 = 0x%lx, a2 = 0x%lx, a3 = 0x%lx\n", regs->a0, regs->a1, regs->a2, regs->a3);
+    printf("  a4 = 0x%lx, a5 = 0x%lx, a6 = 0x%lx, a7 = 0x%lx\n", regs->a4, regs->a5, regs->a6, regs->a7);
+    printf("  s2 = 0x%lx, s3 = 0x%lx, s4 = 0x%lx, s5 = 0x%lx\n", regs->s2, regs->s3, regs->s4, regs->s5);
+    printf("  s6 = 0x%lx, s7 = 0x%lx, s8 = 0x%lx\n", regs->s6, regs->s7, regs->s8);
+    printf("  s9 = 0x%lx, s10 = 0x%lx, s11 = 0x%lx\n", regs->s9, regs->s10, regs->s11);
+    printf("  t3 = 0x%lx, t4 = 0x%lx, t5 = 0x%lx, t6 = 0x%lx\n", regs->t3, regs->t4, regs->t5, regs->t6);
+    printf("---------------------------------------\n");
+}
+
+int main() {
+    RegisterDump regs;
+    regs.count = 0;
+
+    // Initializing RegisterState 
+    int i = 0;
+    RegisterState state = { .ra = i, .sp = i + 1, .gp = i + 2, .tp = i + 3,
+                            .t0 = i + 4, .t1 = i + 5, .t2 = i + 6, .s0 = i + 7, .s1 = i + 8,
+                            .a0 = i + 9, .a1 = i + 10, .a2 = i + 11, .a3 = i + 12, .a4 = i + 13,
+                            .a5 = i + 14, .a6 = i + 15, .a7 = i + 16, .s2 = i + 17, .s3 = i + 18,
+                            .s4 = i + 19, .s5 = i + 20, .s6 = i + 21, .s7 = i + 22, .s8 = i + 23,
+                            .s9 = i + 24, .s10 = i + 25, .s11 = i + 26, .t3 = i + 27, .t4 = i + 28,
+                            .t5 = i + 29, .t6 = i + 30 };
+
+    printf("Initial register state:\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    __asm__ volatile (
+        "xor  t1, t1, t1\n"    // t1 = 0
+        "xor  s2, s2, s2\n"    // s2 = 0
+        "xor  s3, s3, s3\n"    // s3 = 0
+    );
+    printf("Set registers to 0:\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    __asm__ volatile (
+        "jal   target\n"  // Jump to target address (and store return address in ra)
+    );
+    printf("Executed JAL instruction (jumped to target address).\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    // Simulate target address label
+    __asm__ volatile (
+        "target:\n"
+        "addi s4, s4, 1\n"  // Increment s4 to show the jump
+    );
+
+    printf("Target address reached and executed.\n");
+    get_registers(&state);
+    regs.states[regs.count++] = state;
+
+    // Save the register dump
+    save_register_dump(&regs, "../test_compare/test_jal_dump.txt");
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_load.c</summary>
+        <code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+
+// Register structure
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2;
+    unsigned long s0, s1;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+    unsigned long s2, s3, s4, s5, s6, s7, s8;
+    unsigned long s9, s10, s11;
+    unsigned long t3, t4, t5, t6;
+} RegisterState;
+
+// Function to get the register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, ra\n"
+        "mv %1, sp\n"
+        "mv %2, gp\n"
+        "mv %3, tp\n"
+        "mv %4, t0\n"
+        "mv %5, t1\n"
+        "mv %6, t2\n"
+        "mv %7, s0\n"
+        "mv %8, s1\n"
+        "mv %9, a0\n"
+        "mv %10, a1\n"
+        "mv %11, a2\n"
+        "mv %12, a3\n"
+        "mv %13, a4\n"
+        "mv %14, a5\n"
+        "mv %15, a6\n"
+        : "=r"(regs->ra), "=r"(regs->sp), "=r"(regs->gp), "=r"(regs->tp),
+            "=r"(regs->t0), "=r"(regs->t1), "=r"(regs->t2), "=r"(regs->s0),
+            "=r"(regs->s1), "=r"(regs->a0), "=r"(regs->a1), "=r"(regs->a2),
+            "=r"(regs->a3), "=r"(regs->a4), "=r"(regs->a5), "=r"(regs->a6)
+    );
+
+    __asm__ volatile (
+        "mv %0, a7\n"
+        "mv %1, s2\n"
+        "mv %2, s3\n"
+        "mv %3, s4\n"
+        "mv %4, s5\n"
+        "mv %5, s6\n"
+        "mv %6, s7\n"
+        "mv %7, s8\n"
+        "mv %8, s9\n"
+        "mv %9, s10\n"
+        "mv %10, s11\n"
+        "mv %11, t3\n"
+        "mv %12, t4\n"
+        "mv %13, t5\n"
+        "mv %14, t6\n"
+        : "=r"(regs->a7), "=r"(regs->s2), "=r"(regs->s3), "=r"(regs->s4), "=r"(regs->s5),
+            "=r"(regs->s6), "=r"(regs->s7), "=r"(regs->s8), "=r"(regs->s9), "=r"(regs->s10),
+            "=r"(regs->s11), "=r"(regs->t3), "=r"(regs->t4), "=r"(regs->t5), "=r"(regs->t6)
+    );
+}
+
+// Function to convert register state into a JSON formatted string
+void register_state_to_json(RegisterState *regs, char *json_str) {
+    sprintf(json_str, 
+            "{\"ra\":%lu,\"sp\":%lu,\"gp\":%lu,\"tp\":%lu,"
+            "\"t0\":%lu,\"t1\":%lu,\"t2\":%lu,\"s0\":%lu,\"s1\":%lu,"
+            "\"a0\":%lu,\"a1\":%lu,\"a2\":%lu,\"a3\":%lu,\"a4\":%lu,"
+            "\"a5\":%lu,\"a6\":%lu,\"a7\":%lu,\"s2\":%lu,\"s3\":%lu,"
+            "\"s4\":%lu,\"s5\":%lu,\"s6\":%lu,\"s7\":%lu,\"s8\":%lu,"
+            "\"s9\":%lu,\"s10\":%lu,\"s11\":%lu,\"t3\":%lu,\"t4\":%lu,"
+            "\"t5\":%lu,\"t6\":%lu}", 
+            regs->ra, regs->sp, regs->gp, regs->tp, regs->t0, regs->t1, regs->t2,
+            regs->s0, regs->s1, regs->a0, regs->a1, regs->a2, regs->a3, regs->a4,
+            regs->a5, regs->a6, regs->a7, regs->s2, regs->s3, regs->s4, regs->s5,
+            regs->s6, regs->s7, regs->s8, regs->s9, regs->s10, regs->s11, regs->t3,
+            regs->t4, regs->t5, regs->t6);
+}
+
+// Function to send JSON data to a server via HTTP POST using sockets
+void send_registers_to_server(const char *server_ip, int server_port, const char *json_str) {
+    int sockfd;
+    struct sockaddr_in server_addr;
+    char request[1024];
+    
+    // Create socket
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0) {
+        perror("Socket creation failed");
+        exit(1);
+    }
+
+    // Define server address
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(server_port);
+    server_addr.sin_addr.s_addr = inet_addr(server_ip);
+    
+    // Connect to server
+    if (connect(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+        perror("Connection failed");
+        close(sockfd);
+        exit(1);
+    }
+
+    // Prepare HTTP POST request
+    snprintf(request, sizeof(request),
+                "POST /register_state HTTP/1.1\r\n"
+                "Host: %s\r\n"
+                "Content-Type: application/json\r\n"
+                "Content-Length: %ld\r\n\r\n%s",
+                server_ip, strlen(json_str), json_str);
+
+    // Send request
+    send(sockfd, request, strlen(request), 0);
+
+    // Receive response
+    char response[1024];
+    int bytes_received = recv(sockfd, response, sizeof(response) - 1, 0);
+    if (bytes_received > 0) {
+        response[bytes_received] = '\0';
+        printf("Server Response: %s\n", response);
+    }
+
+    // Close socket
+    close(sockfd);
+}
+
+int main() {
+    // Define server IP and port
+    const char *server_ip = "127.0.0.1";  // Replace with your server's IP
+    int server_port = 8080;               // Replace with your server's port
+
+    // Get register values
+    RegisterState regs;
+    get_registers(&regs);
+
+    // Convert register values to JSON string
+    char json_str[1024];
+    register_state_to_json(&regs, json_str);
+
+    // Send JSON data to server (behind a load balancer)
+    send_registers_to_server(server_ip, server_port, json_str);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_ori.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define OUTPUT_FILE "ori_dump.txt"
+
+// Structure to hold register values
+typedef struct {
+    uint64_t t0;
+    uint64_t result;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, t0\n"
+        "mv %1, a0\n"
+        : "=r"(regs->t0), "=r"(regs->result)
+    );
+}
+
+// Function to save register dump to a file
+void save_register_dump(const RegisterState *state) {
+    int fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    char buffer[128];
+    int len = snprintf(buffer, sizeof(buffer),
+        "Register Dump:\n"
+        "t0 = 0x%lx\n"
+        "result = 0x%lx\n",
+        state->t0, state->result
+    );
+
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    }
+
+    close(fd);
+}
+
+// Function to perform `ori`
+void bitwise_or_immediate() {
+    __asm__ volatile (
+        "li t0, 0b10101010\n"  // Load binary 10101010 into t0
+        "ori a0, t0, 0b11001100\n"  // Perform bitwise OR with 11001100
+        "ret\n"                // Return from function
+    );
+}
+
+int main() {
+    RegisterState state;
+
+    // Call the function that executes `ori`
+    __asm__ volatile (
+        "call bitwise_or_immediate\n"
+    );
+
+    // Capture register state after calling `ori`
+    get_registers(&state);
+    save_register_dump(&state);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_slli.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define OUTPUT_FILE "slli_dump.txt"
+
+// Structure to hold register values
+typedef struct {
+    uint64_t t0;
+    uint64_t result;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, t0\n"
+        "mv %1, a0\n"
+        : "=r"(regs->t0), "=r"(regs->result)
+    );
+}
+
+// Function to save register dump to a file
+void save_register_dump(const RegisterState *state) {
+    int fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    char buffer[128];
+    int len = snprintf(buffer, sizeof(buffer),
+        "Register Dump:\n"
+        "t0 = 0x%lx\n"
+        "result = 0x%lx\n",
+        state->t0, state->result
+    );
+
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    }
+
+    close(fd);
+}
+
+// Function to perform `slli`
+void shift_left_logical_immediate() {
+    __asm__ volatile (
+        "li t0, 0x1\n"    // Load 1 into t0
+        "slli a0, t0, 3\n" // Shift t0 left by 3 bits, store in a0 (1 << 3 = 8)
+        "ret\n"           // Return from function
+    );
+}
+
+int main() {
+    RegisterState state;
+
+    // Call the function that executes `slli`
+    __asm__ volatile (
+        "call shift_left_logical_immediate\n"
+    );
+
+    // Capture register state after executing `slli`
+    get_registers(&state);
+    save_register_dump(&state);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_srai.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define OUTPUT_FILE "srai_dump.txt"
+
+// Structure to hold register values
+typedef struct {
+    int64_t input_value;
+    uint64_t shift_amount;
+    int64_t result;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, a0\n"   // Save input value
+        "mv %1, a1\n"   // Save shift amount
+        "mv %2, a2\n"   // Save result
+        : "=r"(regs->input_value), "=r"(regs->shift_amount), "=r"(regs->result)
+    );
+}
+
+// Function to save register dump to a file
+void save_register_dump(const RegisterState *state) {
+    int fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    char buffer[128];
+    int len = snprintf(buffer, sizeof(buffer),
+        "Register Dump:\n"
+        "Input Value = 0x%lx (%ld)\n"
+        "Shift Amount = %lu\n"
+        "Result = 0x%lx (%ld)\n",
+        state->input_value, state->input_value,
+        state->shift_amount,
+        state->result, state->result
+    );
+
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    }
+
+    close(fd);
+}
+
+// Function to perform `srai`
+void shift_right_arithmetic_immediate() {
+    int64_t input_value = -1234;  // Negative number to test sign extension
+    uint64_t shift_amount = 3;    // Shift right by 3 bits
+    int64_t result;
+
+    __asm__ volatile (
+        "mv a0, %1\n"      // Load input value into a0
+        "li a1, %2\n"      // Load shift amount into a1
+        "srai a2, a0, 3\n" // Perform SRAI (Shift Right Arithmetic Immediate)
+        "mv %0, a2\n"      // Store result
+        : "=r"(result)
+        : "r"(input_value), "I"(shift_amount)
+        : "a0", "a1", "a2"
+    );
+
+    RegisterState state = {input_value, shift_amount, result};
+    save_register_dump(&state);
+}
+
+int main() {
+    shift_right_arithmetic_immediate();
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_sltu.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+#define OUTPUT_FILE "sltu_dump.txt"
+
+// Define structure for register state
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2, t3;
+    unsigned long s0, s1;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+    unsigned long s2, s3, s4, s5, s6, s7, s8;
+    unsigned long s9, s10, s11;
+} RegisterState;
+
+// Function to save register values to a file
+void save_register_dump(const RegisterState *state) {
+    int fd;
+    char buffer[512];
+    int len, written, total_written = 0;
+
+    // Open file
+    fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Failed to open output file");
+        return;
+    }
+
+    // Format the register values into a buffer
+    len = snprintf(buffer, sizeof(buffer),
+        "Register State:\n"
+        "ra=%lu sp=%lu gp=%lu tp=%lu\n"
+        "t0=%lu t1=%lu t2=%lu t3=%lu\n"
+        "s0=%lu s1=%lu\n"
+        "a0=%lu a1=%lu a2=%lu a3=%lu a4=%lu a5=%lu a6=%lu a7=%lu\n"
+        "s2=%lu s3=%lu s4=%lu s5=%lu s6=%lu s7=%lu s8=%lu s9=%lu s10=%lu s11=%lu\n\n",
+        state->ra, state->sp, state->gp, state->tp,
+        state->t0, state->t1, state->t2, state->t3,
+        state->s0, state->s1,
+        state->a0, state->a1, state->a2, state->a3, state->a4, state->a5, state->a6, state->a7,
+        state->s2, state->s3, state->s4, state->s5, state->s6, state->s7, state->s8, state->s9, state->s10, state->s11
+    );
+
+    // Write buffer to file with error handling
+    while (total_written < len) {
+        written = write(fd, buffer + total_written, len - total_written);
+        if (written < 0) {
+            perror("Failed to write to output file");
+            close(fd);
+            return;
+        }
+        total_written += written;
+    }
+
+    // Close file
+    close(fd);
+}
+
+// Function to capture register state using inline RISC-V assembly
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, ra\n"
+        "mv %1, sp\n"
+        "mv %2, gp\n"
+        "mv %3, tp\n"
+        "mv %4, t0\n"
+        "mv %5, t1\n"
+        "mv %6, t2\n"
+        "mv %7, t3\n"
+        "mv %8, s0\n"
+        "mv %9, s1\n"
+        "mv %10, a0\n"
+        "mv %11, a1\n"
+        "mv %12, a2\n"
+        "mv %13, a3\n"
+        "mv %14, a4\n"
+        "mv %15, a5\n"
+        "mv %16, a6\n"
+        "mv %17, a7\n"
+        "mv %18, s2\n"
+        "mv %19, s3\n"
+        "mv %20, s4\n"
+        "mv %21, s5\n"
+        "mv %22, s6\n"
+        "mv %23, s7\n"
+        "mv %24, s8\n"
+        "mv %25, s9\n"
+        "mv %26, s10\n"
+        "mv %27, s11\n"
+        : "=r"(regs->ra), "=r"(regs->sp), "=r"(regs->gp), "=r"(regs->tp),
+            "=r"(regs->t0), "=r"(regs->t1), "=r"(regs->t2), "=r"(regs->t3),
+            "=r"(regs->s0), "=r"(regs->s1), "=r"(regs->a0), "=r"(regs->a1),
+            "=r"(regs->a2), "=r"(regs->a3), "=r"(regs->a4), "=r"(regs->a5),
+            "=r"(regs->a6), "=r"(regs->a7), "=r"(regs->s2), "=r"(regs->s3),
+            "=r"(regs->s4), "=r"(regs->s5), "=r"(regs->s6), "=r"(regs->s7),
+            "=r"(regs->s8), "=r"(regs->s9), "=r"(regs->s10), "=r"(regs->s11)
+    );
+}
+
+int main() {
+    RegisterState state;
+
+    // Initialize registers with sample values
+    state.t0 = 0xAAAA;
+    state.t1 = 0x5555;
+
+    // Load values into registers using inline assembly
+    __asm__ volatile (
+        "mv t0, %0\n"
+        "mv t1, %1\n"
+        :
+        : "r"(state.t0), "r"(state.t1)
+    );
+
+    // Capture initial register state
+    get_registers(&state);
+    save_register_dump(&state);
+
+    // Perform SLTU operation: t2 = (t0 < t1) ? 1 : 0 (unsigned comparison)
+    __asm__ volatile (
+        "sltu t2, t0, t1\n"
+    );
+
+    // Capture state after SLTU
+    get_registers(&state);
+    save_register_dump(&state);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_subu.c</summary>
+        <code>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+
+// Define output file path
+#define OUTPUT_FILE "slt_dump.txt"
+
+// Structure to hold register values
+typedef struct {
+    unsigned long ra, sp, gp, tp;
+    unsigned long t0, t1, t2, t3, t4, t5, t6;
+    unsigned long s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
+    unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, t0\n"
+        "mv %1, t1\n"
+        "mv %2, t2\n"
+        "mv %3, t3\n"
+        : "=r"(regs->t0), "=r"(regs->t1), "=r"(regs->t2), "=r"(regs->t3)
+    );
+}
+
+// Function to save register values to a file
+void save_register_dump(const RegisterState *state) {
+    int fd;
+    char buffer[512];
+    int len;
+
+    // Open file
+    fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    // Format register values into buffer
+    len = snprintf(buffer, sizeof(buffer),
+        "Register State:\n"
+        "t0=%lu t1=%lu t2=%lu t3=%lu\n",
+        state->t0, state->t1, state->t2, state->t3
+    );
+
+    // Write buffer to file with error checking
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    } else if (bytes_written != len) {
+        fprintf(stderr, "Warning: Partial write occurred!\n");
+    }
+
+    // Close file
+    close(fd);
+}
+
+// Main function
+int main() {
+    RegisterState state;
+
+    // Initialize values
+    state.t0 = 0xAAAA;
+    state.t1 = 0x5555;
+
+    // Load values into registers using inline assembly
+    __asm__ volatile (
+        "mv t0, %0\n"
+        "mv t1, %1\n"
+        :
+        : "r"(state.t0), "r"(state.t1)
+    );
+
+    // Capture initial register state
+    get_registers(&state);
+    save_register_dump(&state);
+
+    // Perform SUBU operation: t3 = t0 - t1
+    __asm__ volatile (
+        "sub t3, t0, t1\n"
+    );
+
+    // Capture state after SUBU
+    get_registers(&state);
+    save_register_dump(&state);
+
+    printf("Execution complete. Check '%s' for results.\n", OUTPUT_FILE);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <details>
+        <summary>test_xori.c</summary>
+        <code>
+#include <stdint.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+#define OUTPUT_FILE "xori_dump.txt"
+
+// Structure to hold register values
+typedef struct {
+    uint64_t t0;
+    uint64_t result;
+} RegisterState;
+
+// Function to capture register values
+void get_registers(RegisterState *regs) {
+    __asm__ volatile (
+        "mv %0, t0\n"
+        "mv %1, a0\n"
+        : "=r"(regs->t0), "=r"(regs->result)
+    );
+}
+
+// Function to save register dump to a file
+void save_register_dump(const RegisterState *state) {
+    int fd = open(OUTPUT_FILE, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("Error opening file");
+        return;
+    }
+
+    char buffer[128];
+    int len = snprintf(buffer, sizeof(buffer),
+        "Register Dump:\n"
+        "t0 = 0x%lx\n"
+        "result = 0x%lx\n",
+        state->t0, state->result
+    );
+
+    ssize_t bytes_written = write(fd, buffer, len);
+    if (bytes_written < 0) {
+        perror("Error writing to file");
+    }
+
+    close(fd);
+}
+
+// Function to perform `xori`
+void bitwise_xor_immediate() {
+    __asm__ volatile (
+        "li t0, 0b10101010\n"  // Load binary 10101010 into t0
+        "xori a0, t0, 0b11001100\n"  // Perform bitwise XOR with 11001100
+        "ret\n"                // Return from function
+    );
+}
+
+int main() {
+    RegisterState state;
+
+    // Call the function that executes `xori`
+    __asm__ volatile (
+        "call bitwise_xor_immediate\n"
+    );
+
+    // Capture register state after calling `xori`
+    get_registers(&state);
+    save_register_dump(&state);
+
+    return 0;
+}
+        </code>
+      </details>
+
+      <!-- Add more instruction tests here -->
     </div>
-  </section>
 
   <footer>
-    &copy; 2025 Krishna | Simulation Portfolio | Powered by GitHub Pages
+    &copy; 2025 Krishna
   </footer>
 </body>
 </html>
