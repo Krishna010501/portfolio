@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krishna | RISC-V Simulation Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fbfd;
+      color: #1e293b;
+    }
+    header {
+      background-color: #0f172a;
+      color: #e0f2fe;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    header p {
+      margin-top: 0.3rem;
+      font-size: 1.2rem;
+      color: #7dd3fc;
+    }
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 2.5rem 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      border-left: 6px solid #2563eb;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    .card h2 {
+      color: #1d4ed8;
+    }
+    .tech-badge {
+      background-color: #dbeafe;
+      color: #1e40af;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin: 0.2rem;
+      display: inline-block;
+    }
+    pre {
+      background: #0f172a;
+      color: #e0f2fe;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+    }
+    .code-title {
+      background-color: #1e293b;
+      color: #7dd3fc;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e293b;
+      color: #a5b4fc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Krishna</h1>
+    <p>Simulation Engineer | RISC-V ISA & RTL Co-Simulation</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>📌 About Me</h2>
+      <p>I’m a simulation engineer specialized in verifying RISC-V RTL cores using co-simulation with Spike. My work ensures that the behavior of the hardware aligns with the official instruction set semantics, contributing to functional correctness before ASIC tapeout.</p>
+    </div>
+
+    <div class="card">
+      <h2>📋 Summary of Work</h2>
+      <ul>
+        <li>✔️ Migrated simulation to Ubuntu for compatibility</li>
+        <li>✔️ Implemented 22+ RISC-V instructions including logical, shift, branch, and memory</li>
+        <li>✔️ Refined simulation framework and register dumps</li>
+        <li>✔️ Created automatic comparison utilities between Spike and RTL trace</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🛠️ Technologies</h2>
+      <div class="tech-badge">RISC-V ISA</div>
+      <div class="tech-badge">Spike</div>
+      <div class="tech-badge">C</div>
+      <div class="tech-badge">GCC for RISC-V</div>
+      <div class="tech-badge">QEMU</div>
+      <div class="tech-badge">Verilator</div>
+      <div class="tech-badge">Register Dump Scripts</div>
+    </div>
+
+    <div class="card">
+      <h2>🔁 Simulation Flow</h2>
+      <p>Instruction ➜ Assembly Code ➜ Compile ➜ Run on RTL & Spike ➜ Dump ➜ Compare</p>
+      <img src="simulation_flow_diagram.png" alt="Simulation Flow Diagram" style="width:100%; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.1);"/>
+    </div>
+
+    <div class="card">
+      <h2>📦 Simulation Code Snippets</h2>
+      <div class="code-title">test_sltu.c</div>
+      <pre>
+int main() {
+    unsigned int a = 5, b = 10, res;
+    asm volatile ("sltu %0, %1, %2" : "=r"(res) : "r"(a), "r"(b));
+    return res;  // res should be 1
+}
+      </pre>
+
+      <div class="code-title">test_srai.c</div>
+      <pre>
+int main() {
+    int val = -32, result;
+    asm volatile ("srai %0, %1, 2" : "=r"(result) : "r"(val));
+    return result;  // Arithmetic right shift
+}
+      </pre>
+
+      <div class="code-title">test_sw.c</div>
+      <pre>
+int main() {
+    int value = 42;
+    int *addr = (int*)0x10000000;
+    asm volatile("sw %0, 0(%1)" : : "r"(value), "r"(addr));
+    return 0;
+}
+      </pre>
+    </div>
+
+    <div class="card">
+      <h2>📂 More Instruction Tests You Can Add</h2>
+      <ul>
+        <li>test_sb.c – Store Byte</li>
+        <li>test_sh.c – Store Halfword</li>
+        <li>test_sll.c – Shift Left Logical</li>
+        <li>test_sub.c – Subtract</li>
+        <li>test_xnor.c – Bitwise XNOR</li>
+      </ul>
+      <p><em>You can paste these test files directly into the simulation folder for validation.</em></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Krishna | Simulation Portfolio | Powered by GitHub Pages
+  </footer>
+</body>
+</html>
